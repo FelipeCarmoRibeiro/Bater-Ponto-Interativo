@@ -23,7 +23,7 @@
     <audio id="alertaSom">
     <source src="{{ url_for('static', filename='som.mp3') }}" type="audio/mpeg">
     </audio>
-
+    <p id="clock"></p>
     <script>
         // pede permissão para enviar notificações
         if (Notification.permission !== "granted") {
