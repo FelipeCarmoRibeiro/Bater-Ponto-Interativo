@@ -25,9 +25,11 @@
     </audio>
     <script>
         // pede permissão para enviar notificações
+        if ("Notification" in window) {
         if (Notification.permission !== "granted") {
-            Notification.requestPermission();
-        }
+        Notification.requestPermission();
+    }
+}
 
         function atualizarRelogio() {
             const agora = new Date();
