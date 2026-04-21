@@ -72,16 +72,21 @@
 
             alert(texto);
         }
-        function ativarSom() {
-        const som = document.getElementById('alertaSom');
-        Notification.requestPermission();
+      function ativarSom() {
+    const som = document.getElementById('alertaSom');
 
-        som.play().then(() => {
+    if ("Notification" in window) {
+        Notification.requestPermission();
+    }
+
+    som.play().then(() => {
         som.pause();
         som.currentTime = 0;
         alert('Som ativado com sucesso!');
+    }).catch(() => {
+        alert('Clique novamente para ativar o som.');
     });
-    }
+}
 
         setInterval(atualizarRelogio, 1000);
         atualizarRelogio();
