@@ -59,12 +59,14 @@
 
             som.currentTime = 0;
             som.play();
-            if (Notification.permission === 'granted') {
-                new Notification('Bater ponto', {
-                    body: texto,
-                    icon: 'https://cdn-icons-png.flaticon.com/512/1827/1827349.png'
-                });
-            }
+        if ("Notification" in window) {
+        if (Notification.permission === 'granted') {
+        new Notification('Bater ponto', {
+            body: texto,
+            icon: 'https://cdn-icons-png.flaticon.com/512/1827/1827349.png'
+        });
+    }
+}
 
             alert(texto);
         }
